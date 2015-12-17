@@ -1,0 +1,5 @@
+
+.vagrant
+.idea
+node_modules
+tools/*
