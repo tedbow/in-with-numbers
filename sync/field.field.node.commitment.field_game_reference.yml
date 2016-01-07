@@ -1,0 +1,26 @@
+uuid: 67202104-4b66-4070-9050-80e29e14ecf5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_game_reference
+    - node.type.commitment
+    - node.type.game
+id: node.commitment.field_game_reference
+field_name: field_game_reference
+entity_type: node
+bundle: commitment
+label: 'Game reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      game: game
+    sort:
+      field: _none
+field_type: entity_reference

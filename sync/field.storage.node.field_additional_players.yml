@@ -1,0 +1,20 @@
+uuid: 526bfe93-cd54-480f-9f00-a1e68973b014
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_additional_players
+field_name: field_additional_players
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

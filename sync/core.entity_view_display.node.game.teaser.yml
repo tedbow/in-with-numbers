@@ -1,0 +1,23 @@
+uuid: afe1fcda-1806-4d4a-b052-8289c665a338
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.game.field_date
+    - field.field.node.game.field_group_reference
+    - field.field.node.game.field_location
+    - node.type.game
+  module:
+    - user
+id: node.game.teaser
+targetEntityType: node
+bundle: game
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_date: true
+  field_group_reference: true
+  field_location: true

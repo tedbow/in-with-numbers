@@ -1,0 +1,11 @@
+uuid: af31aaec-aabb-42a7-ac00-ed6513ea4387
+langcode: en
+status: true
+dependencies: {  }
+name: Commitment
+type: commitment
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,23 @@
+uuid: c6572046-12f0-4182-9354-84b851ce25fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.game_comment
+    - field.field.comment.game_comment.comment_body
+  module:
+    - text
+id: comment.game_comment.default
+targetEntityType: comment
+bundle: game_comment
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }

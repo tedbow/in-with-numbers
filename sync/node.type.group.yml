@@ -1,0 +1,11 @@
+uuid: 234e8e44-bc49-440d-8200-cc4b3da79fc6
+langcode: en
+status: true
+dependencies: {  }
+name: Group
+type: group
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

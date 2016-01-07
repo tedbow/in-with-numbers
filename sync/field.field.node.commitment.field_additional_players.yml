@@ -1,0 +1,23 @@
+uuid: 8f895687-7164-47c0-a100-d0c650d86f9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_additional_players
+    - node.type.commitment
+id: node.commitment.field_additional_players
+field_name: field_additional_players
+entity_type: node
+bundle: commitment
+label: 'Additional players'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

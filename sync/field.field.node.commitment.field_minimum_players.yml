@@ -1,0 +1,23 @@
+uuid: e049cef5-3d79-4a95-8c4a-74f4a5b9123b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_minimum_players
+    - node.type.commitment
+id: node.commitment.field_minimum_players
+field_name: field_minimum_players
+entity_type: node
+bundle: commitment
+label: 'Minimum players'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 4
+  max: 10
+  prefix: ''
+  suffix: ''
+field_type: integer

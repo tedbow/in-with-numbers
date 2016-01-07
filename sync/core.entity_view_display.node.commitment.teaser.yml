@@ -1,0 +1,19 @@
+uuid: 0528300d-cf42-44e6-a61c-289b13f2b058
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.commitment.field_minimum_players
+    - node.type.commitment
+  module:
+    - user
+id: node.commitment.teaser
+targetEntityType: node
+bundle: commitment
+mode: teaser
+content:
+  links:
+    weight: 100
+hidden:
+  field_minimum_players: true

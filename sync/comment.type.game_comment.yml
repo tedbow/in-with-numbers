@@ -1,0 +1,8 @@
+uuid: 1985c495-1730-41de-9300-0f17bbe62d54
+langcode: en
+status: true
+dependencies: {  }
+id: game_comment
+label: 'Game comment'
+target_entity_type_id: node
+description: ''

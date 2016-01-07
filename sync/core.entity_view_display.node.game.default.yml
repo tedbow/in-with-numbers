@@ -1,0 +1,47 @@
+uuid: aa15be7f-b537-4726-a007-7bfd6c3af765
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.game.field_com
+    - field.field.node.game.field_date
+    - field.field.node.game.field_group_reference
+    - field.field.node.game.field_location
+    - node.type.game
+  module:
+    - comment
+    - datetime
+    - user
+id: node.game.default
+targetEntityType: node
+bundle: game
+mode: default
+content:
+  field_com:
+    weight: 3
+    label: above
+    settings:
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+  field_date:
+    weight: 1
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: 12_hour_time
+    third_party_settings: {  }
+    type: datetime_default
+  field_location:
+    weight: 2
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_group_reference: true

@@ -1,0 +1,8 @@
+uuid: eb93a245-7edf-4043-a11e-307051468d70
+langcode: en
+status: true
+dependencies: {  }
+id: 12_hour_time
+label: '12 hour time'
+locked: false
+pattern: 'h:i a'
