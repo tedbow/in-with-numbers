@@ -1,0 +1,8 @@
+name: pickup game
+type: module
+description: Handles configuration and theming of pickup games
+core: 8.x
+package: Other
+features: true
+dependencies:
+  - rest

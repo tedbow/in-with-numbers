@@ -1,0 +1,14 @@
+{
+  "name": "drupal/pickup_game",
+  "type": "drupal-module",
+  "description": "Handles configuration and theming of pickup games",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "http://drupal.org/project/pickup_game",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/pickup_game",
+    "source": "http://cgit.drupalcode.org/pickup_game"
+  },
+  "require": { }
+}

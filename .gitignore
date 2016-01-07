@@ -1,5 +1,16 @@
-
 .vagrant
 .idea
 node_modules
 tools/*
+html/*
+
+# Ignore Composer dependencies
+docroot/vendor
+
+# Ignore configuration files that may contain sensitive information.
+*settings*.php
+*services*.yml
+
+# Ignore paths that contain user-generated content.
+docroot/sites/*/files
+docroot/sites/*/private
