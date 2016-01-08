@@ -16,7 +16,7 @@ use Drupal\migrate\MigrateMessageInterface;
 use Drupal\simpletest\KernelTestBase;
 
 /**
- * Test whether idmap messages are sent to the message interface when requested.
+ * Tests whether idmap messages are sent to message interface when requested.
  *
  * @group migrate
  */
@@ -46,7 +46,7 @@ class MigrateMessageTest extends KernelTestBase implements MigrateMessageInterfa
   /**
    * {@inheritdoc}
    */
-  public function setUp() {
+  protected function setUp() {
     parent::setUp();
 
     $this->installConfig(['system']);

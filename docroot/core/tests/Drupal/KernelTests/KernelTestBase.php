@@ -786,6 +786,12 @@ abstract class KernelTestBase extends \PHPUnit_Framework_TestCase implements Ser
   /**
    * Enables modules for this test.
    *
+   * To install test modules outside of the testing environment, add
+   * @code
+   * $settings['extension_discovery_scan_tests'] = TRUE;
+   * @encode
+   * to your settings.php.
+   *
    * @param string[] $modules
    *   A list of modules to enable. Dependencies are not resolved; i.e.,
    *   multiple modules have to be specified individually. The modules are only
@@ -1114,6 +1120,24 @@ abstract class KernelTestBase extends \PHPUnit_Framework_TestCase implements Ser
     if (in_array($name, $denied) || strpos($name, 'original') === 0) {
       throw new \RuntimeException(sprintf('TestBase::$%s property no longer exists', $name));
     }
+  }
+
+  /**
+   * Prevents serializing any properties.
+   *
+   * Kernel tests are run in a separate process. To do this PHPUnit creates a
+   * script to run the test. If it fails, the test result object will contain a
+   * stack trace which includes the test object. It will attempt to serialize
+   * it. Returning an empty array prevents it from serializing anything it
+   * should not.
+   *
+   * @return array
+   *   An empty array.
+   *
+   * @see vendor/phpunit/phpunit/src/Util/PHP/Template/TestCaseMethod.tpl.dist
+   */
+  public function __sleep() {
+    return [];
   }
 
 }

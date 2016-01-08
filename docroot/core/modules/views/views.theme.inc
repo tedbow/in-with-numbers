@@ -552,13 +552,13 @@ function template_preprocess_views_view_table(&$variables) {
     if (!empty($options['info'][$field]['empty_column'])) {
       $empty = TRUE;
       foreach ($variables['rows'] as $columns) {
-        $empty &= empty($columns[$column]);
+        $empty &= empty($columns['columns'][$column]['content']);
       }
       if ($empty) {
         foreach ($variables['rows'] as &$column_items) {
-          unset($column_items[$column]);
-          unset($variables['header'][$column]);
+          unset($column_items['columns'][$column]);
         }
+        unset($variables['header'][$column]);
       }
     }
   }
@@ -596,6 +596,10 @@ function template_preprocess_views_view_table(&$variables) {
   // Add the caption to the list if set.
   if (!empty($handler->options['caption'])) {
     $variables['caption'] = ['#markup' => $handler->options['caption']];
+    $variables['caption_needed'] = TRUE;
+  }
+  elseif (!empty($variables['title'])) {
+    $variables['caption'] = ['#markup' => $variables['title']];
     $variables['caption_needed'] = TRUE;
   }
   else {
