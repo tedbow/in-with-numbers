@@ -1,0 +1,14 @@
+{
+  "name": "drupal/in_with_numbers",
+  "type": "drupal-module",
+  "description": "Custom module for our site",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/in_with_numbers",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/in_with_numbers",
+    "source": "http://cgit.drupalcode.org/in_with_numbers"
+  },
+  "require": { }
+}

@@ -1,0 +1,7 @@
+name: In With Numbers
+type: module
+description: Custom module for our site
+core: 8.x
+package: In With Numbers
+dependencies:
+  - node

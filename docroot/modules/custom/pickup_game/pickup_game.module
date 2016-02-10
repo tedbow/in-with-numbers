@@ -36,5 +36,5 @@ function pickup_game_theme() {
  * Implements hook_preprocess_node().
  */
 function pickup_game_preprocess_node(&$variables) {
-  dpm('$variables');
+  //dpm('$variables');
 }

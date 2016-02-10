@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains in_with_numbers.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function in_with_numbers_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the in_with_numbers module.
+    case 'help.page.in_with_numbers':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom module for our site') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function in_with_numbers_theme() {
+  $theme = [];
+
+  return $theme;
+}
