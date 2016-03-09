@@ -16,4 +16,6 @@ content:
   links:
     weight: 100
 hidden:
+  field_additional_players: true
+  field_game_reference: true
   field_minimum_players: true

@@ -18,6 +18,7 @@ content:
   links:
     weight: 100
 hidden:
+  field_com: true
   field_date: true
   field_group_reference: true
   field_location: true
