@@ -9,6 +9,7 @@ namespace Drupal\in_with_numbers\Plugin\Block;
 
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Form\FormBuilderInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Session\AccountProxyInterface;
@@ -39,6 +40,11 @@ class CommitmentAddBlock extends BlockBase implements ContainerFactoryPluginInte
    * @var \Drupal\Core\Session\AccountProxy
    */
   protected $current_user;
+
+  /**
+   * @var \Drupal\Core\Form\FormBuilderInterface
+   */
+  protected $form_builder;
   /**
    * Construct.
    *
@@ -54,11 +60,13 @@ class CommitmentAddBlock extends BlockBase implements ContainerFactoryPluginInte
         $plugin_id,
         $plugin_definition,
         CurrentRouteMatch $current_route_match,
-	AccountProxyInterface $current_user
+	AccountProxyInterface $current_user,
+    FormBuilderInterface $form_builder
   ) {
     parent::__construct($configuration, $plugin_id, $plugin_definition);
     $this->current_route_match = $current_route_match;
     $this->current_user = $current_user;
+    $this->form_builder = $form_builder;
   }
 
   /**
@@ -70,7 +78,8 @@ class CommitmentAddBlock extends BlockBase implements ContainerFactoryPluginInte
       $plugin_id,
       $plugin_definition,
       $container->get('current_route_match'),
-      $container->get('current_user')
+      $container->get('current_user'),
+      $container->get('form_builder')
     );
   }
 
@@ -82,7 +91,8 @@ class CommitmentAddBlock extends BlockBase implements ContainerFactoryPluginInte
   public function build() {
 
     $build = [];
-    $build['commitment_add_block']['#markup'] = 'Implement CommitmentAddBlock.';
+
+    $build['form'] = $this->form_builder->getForm('\Drupal\in_with_numbers\Form\AddCommitmentForm');
 
     return $build;
   }

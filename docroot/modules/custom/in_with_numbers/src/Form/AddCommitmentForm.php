@@ -9,6 +9,9 @@ namespace Drupal\in_with_numbers\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Session\AccountProxyInterface;
+use Drupal\node\Entity\Node;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Entity\EntityTypeManager;
 
@@ -19,12 +22,14 @@ use Drupal\Core\Entity\EntityTypeManager;
  */
 class AddCommitmentForm extends FormBase {
 
+
   /**
    * Drupal\Core\Entity\EntityTypeManager definition.
    *
-   * @var Drupal\Core\Entity\EntityTypeManager
+   * @var \Drupal\Core\Entity\EntityTypeManager
    */
   protected $entity_type_manager;
+
   public function __construct(
     EntityTypeManager $entity_type_manager
   ) {
@@ -33,7 +38,6 @@ class AddCommitmentForm extends FormBase {
 
   public static function create(ContainerInterface $container) {
     return new static(
-      $container->get('config.factory'),
       $container->get('entity_type.manager')
     );
   }
@@ -52,7 +56,7 @@ class AddCommitmentForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form['i_am_in'] = array(
       '#type' => 'submit',
-      '#title' => $this->t('I am in'),
+      '#value' => $this->t('I am in'),
       '#description' => $this->t('Are you down?'),
     );
 
@@ -63,6 +67,21 @@ class AddCommitmentForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    /** @var Node $game_node */
+    if ($game_node = $this->getRouteMatch()->getParameter('node')) {
+      $this->entity_type_manager->getStorage('node')->create()
+      $commitment_node = Node::create(array(
+        'type' => 'commitment',
+        'title' => 'New one',
+        'langcode' => 'en',
+        'uid' => $this->currentUser()->id(),
+        'status' => 1,
+        'field_game_reference' => [$game_node->id()],
+      ));
+
+      $commitment_node->save();
+      drupal_set_message('Commitment Saved!');
+    }
 
   }
 
